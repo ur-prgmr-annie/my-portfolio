@@ -8,36 +8,77 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-* {margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
 
-body {
-    background: linear-gradient(135deg, #020617, #1e3a8a);
-    color: white;
-    overflow-x: hidden;
+/* BODY */
+body{
+background:linear-gradient(135deg,#020617,#1e3a8a);
+color:white;
+overflow-x:hidden;
+transition:0.3s;
+}
+
+/* LIGHT MODE */
+body.light{
+background:#f1f5f9;
+color:#111;
+}
+
+/* PARTICLES */
+#particles{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-3;
+}
+
+/* CURSOR */
+.cursor{
+position:fixed;
+width:15px;
+height:15px;
+background:#60a5fa;
+border-radius:50%;
+pointer-events:none;
+filter:blur(8px);
+z-index:999;
 }
 
 /* NAV */
 nav {
-    display:flex;
-    justify-content:space-between;
-    padding:20px 60px;
-    position:sticky;
-    top:0;
-    background:rgba(255,255,255,0.05);
-    backdrop-filter:blur(15px);
+display:flex;
+justify-content:space-between;
+padding:20px 60px;
+position:sticky;
+top:0;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(15px);
+z-index:10;
 }
 
-nav a {color:white;margin-left:20px;text-decoration:none;}
-nav a:hover {color:#60a5fa;}
+nav a {
+color:white;
+margin-left:20px;
+text-decoration:none;
+}
+
+nav a:hover {
+color:#60a5fa;
+}
 
 /* HERO */
 .hero {
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:50px;
-    flex-wrap:wrap;
-    padding:120px 20px;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:50px;
+flex-wrap:wrap;
+padding:120px 20px;
 }
 
 .hero h1 {font-size:50px;}
@@ -45,238 +86,280 @@ nav a:hover {color:#60a5fa;}
 
 /* PROFILE */
 .profile {
-    width:250px;
-    height:250px;
-    border-radius:50%;
-    object-fit:cover;
-    border:4px solid rgba(96,165,250,0.6);
-    box-shadow:0 0 40px rgba(96,165,250,0.5);
+width:250px;
+height:250px;
+border-radius:50%;
+object-fit:cover;
+border:4px solid rgba(96,165,250,0.6);
+box-shadow:0 0 40px rgba(96,165,250,0.5);
+animation:float 3s infinite;
+}
+
+@keyframes float {
+50% {transform:translateY(-15px);}
 }
 
 /* BUTTON */
 .btn {
-    margin-top:15px;
-    padding:10px 25px;
-    border:none;
-    border-radius:25px;
-    background:linear-gradient(90deg,#3b82f6,#60a5fa);
-    color:white;
-    cursor:pointer;
+margin-top:15px;
+padding:10px 25px;
+border:none;
+border-radius:25px;
+background:linear-gradient(90deg,#3b82f6,#60a5fa);
+color:white;
+cursor:pointer;
 }
 
 /* SECTIONS */
-.section {padding:80px 60px;}
+.section {
+padding:80px 60px;
+}
 
+/* FLEX */
+.flex {
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+/* CARD (IMPROVED ANIMATION STYLE) */
 .card {
-    background:rgba(255,255,255,0.05);
-    backdrop-filter:blur(20px);
-    border-radius:20px;
-    padding:20px;
-    margin:10px;
-    transition:0.4s;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(20px);
+border-radius:20px;
+padding:20px;
+margin:10px;
+transition:0.4s;
 }
 
 .card:hover {
-    transform:translateY(-10px);
-    box-shadow:0 0 25px rgba(96,165,250,0.4);
+transform:translateY(-10px) scale(1.03);
+box-shadow:0 0 25px #60a5fa;
 }
 
-.flex {
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-}
-
-/* IMAGE FIX */
+/* IMAGE */
 img {
-    width:150px;
-    height:150px;
-    object-fit:cover;
-    border-radius:15px;
+width:150px;
+height:150px;
+object-fit:cover;
+border-radius:15px;
 }
 
 /* VIDEO */
-video {width:300px;border-radius:15px;}
+video {
+width:300px;
+border-radius:15px;
+}
 
 /* MODAL */
 .modal {
-    display:none;
-    position:fixed;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.7);
+display:none;
+position:fixed;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+z-index:20;
 }
 
 .modal-content {
-    background:rgba(255,255,255,0.08);
-    margin:10% auto;
-    padding:30px;
-    width:80%;
-    max-width:500px;
-    border-radius:20px;
+background:rgba(255,255,255,0.08);
+margin:10% auto;
+padding:30px;
+width:80%;
+max-width:500px;
+border-radius:20px;
 }
 
 .close {
-    float:right;
-    font-size:25px;
-    cursor:pointer;
+float:right;
+font-size:25px;
+cursor:pointer;
 }
 
-/* SCROLL */
-.hidden {opacity:0;transform:translateY(40px);transition:1s;}
-.show {opacity:1;transform:translateY(0);}
+/* SCROLL ANIMATION */
+.hidden {
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
 
-footer {text-align:center;padding:20px;opacity:0.6;}
+.show {
+opacity:1;
+transform:translateY(0);
+}
+
+/* FOOTER */
+footer {
+text-align:center;
+padding:20px;
+opacity:0.7;
+}
 </style>
 </head>
 
 <body>
 
+<!-- PARTICLES -->
+<canvas id="particles"></canvas>
+<div class="cursor"></div>
+
 <!-- NAV -->
 <nav>
-    <h2>MyPortfolio</h2>
-    <div>
-        <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#hobbies">Hobbies</a>
-        <a href="#projects">Projects</a>
-        <a href="#achievements">Achievements</a>
-    </div>
+<h2>MyPortfolio</h2>
+<div>
+<a href="#about">About</a>
+<a href="#education">Education</a>
+<a href="#hobbies">Hobbies</a>
+<a href="#projects">Projects</a>
+<a href="#achievements">Achievements</a>
+
+<button class="btn" onclick="toggleMode()">🌙</button>
+</div>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
-    <div>
-        <h1>Hello, I'm <span class="typing"></span></h1>
-        <p>Information Technology | Student</p>
-        <button class="btn" onclick="openModal('About Me','I am an IT student passionate about creating modern systems and designs.')">
-            Get to know more about me
-        </button>
-    </div>
+<div>
+<h1>Hello, I'm <span class="typing"></span></h1>
+<p>Information Technology | Student</p>
 
-    <img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776249649/Untitled_design_hscfay.png" class="profile">
+<button class="btn"
+onclick="openModal('About Me','I am an IT student passionate about creating modern systems and designs.')">
+Get to know more about me
+</button>
+</div>
+
+<img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776249649/Untitled_design_hscfay.png"
+class="profile">
 </div>
 
 <!-- ABOUT -->
 <div class="section hidden" id="about">
-    <h2>👤 Personal Info</h2>
-    <div class="card">
-        <p><b>Name:</b> Trecia Anne Gandia</p>
-        <p><b>Age:</b> 21</p>
-        <p><b>Location:</b> Oriental Mindoro, Philippines</p>
+<h2>👤 Personal Info</h2>
+<div class="card">
+<p><b>Name:</b> Trecia Anne Gandia</p>
+<p><b>Age:</b> 21</p>
+<p><b>Location:</b> Oriental Mindoro, Philippines</p>
 
-        <button class="btn" onclick="openModal('Siblings','These are my siblings shown in my portfolio.')">
-            View Siblings
-        </button>
+<button class="btn"
+onclick="openModal('Siblings','These are my siblings shown in my portfolio.')">
+View Siblings
+</button>
 
-        <div class="flex">
-            <!-- SAME CONTENT (di tinanggal) -->
-            <div class="card"><img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776250151/486598590_2466197697060885_6638689244834438460_n_p0elib.jpg"><p>Austine Rio M. Gandia</p></div>
-            <div class="card"><img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776250217/IMG_20241207_090722_385_bq7ucs.jpg"><p>Joanna Marie M. Gandia</p></div>
-            <div class="card"><img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776250539/photo_2026-04-15_18-55-07_boi9ou.jpg"><p>Trecia Mae M. Gandia</p></div>
-            <div class="card"><img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776249645/photo_2026-04-15_17-41-37_czswuk.jpg"><p>Jan Aizelle M. Gandia</p></div>
-            <div class="card"><img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776249645/photo_2026-04-15_17-41-39_o5k88l.jpg"><p>Janella Rose M. Gandia</p></div>
-        </div>
-    </div>
+<div class="flex">
+<div class="card"><img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776250151/486598590_2466197697060885_6638689244834438460_n_p0elib.jpg"><p>Austine Rio</p></div>
+<div class="card"><img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776250217/IMG_20241207_090722_385_bq7ucs.jpg"><p>Joanna Marie</p></div>
+<div class="card"><img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776250539/photo_2026-04-15_18-55-07_boi9ou.jpg"><p>Trecia Mae</p></div>
+<div class="card"><img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776249645/photo_2026-04-15_17-41-37_czswuk.jpg"><p>Jan Aizelle</p></div>
+<div class="card"><img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776249645/photo_2026-04-15_17-41-39_o5k88l.jpg"><p>Janella Rose</p></div>
+</div>
+
+</div>
 </div>
 
 <!-- EDUCATION -->
 <div class="section hidden" id="education">
-    <h2>🎓 Education</h2>
+<h2>🎓 Education</h2>
 
-    <div class="card">
-        <p><b>Primary School</b></p>
-        <p>Antonino Elementary School</p>
-        <p>2011-2017</p>
-    </div>
+<div class="card">
+<p>Antonino Elementary School (2011-2017)</p>
+</div>
 
-    <div class="card">
-        <p><b>Secondary School</b></p>
-        <p>Macatoc National High School</p>
-        <p>HUMSS</p>
-        <p>2017-2023</p>
-    </div>
+<div class="card">
+<p>Macatoc National High School (HUMSS)</p>
+</div>
 </div>
 
 <!-- HOBBIES -->
 <div class="section hidden" id="hobbies">
-    <h2>🎮 Hobbies</h2>
-    <div class="flex">
-        <div class="card">
-            <video controls>
-                <source src="https://www.w3schools.com/html/mov_bbb.mp4">
-            </video>
-            <p>Gaming / Editing / Coding</p>
-        </div>
-    </div>
+<h2>🎮 Hobbies</h2>
+<div class="flex">
+<div class="card">
+<video controls>
+<source src="https://www.w3schools.com/html/mov_bbb.mp4">
+</video>
+<p>Gaming / Editing / Coding</p>
+</div>
+</div>
 </div>
 
 <!-- PROJECTS -->
 <div class="section hidden" id="projects">
-    <h2>💻 Projects</h2>
-    <div class="flex">
+<h2>💻 Projects</h2>
+<div class="flex">
 
-        <div class="card" onclick="openModal('Technopreneurship Project','A business-oriented system designed to promote digital services efficiently.')">
-            <img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776251748/sewsera_h25ibl.png">
-            <p>Technopreneurship Project</p>
-        </div>
+<div class="card" onclick="openModal('Technopreneurship','Business system project')">
+<img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776251748/sewsera_h25ibl.png">
+<p>Technopreneurship</p>
+</div>
 
-        <div class="card" onclick="openModal('Startup Project','An innovative startup idea aimed at solving real-world problems.')">
-            <img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776251795/DAYO_123_rs6adt.png">
-            <p>Startup Project</p>
-        </div>
+<div class="card" onclick="openModal('Startup','Startup system')">
+<img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776251795/DAYO_123_rs6adt.png">
+<p>Startup</p>
+</div>
 
-        <div class="card" onclick="openModal('Capstone Project','A complete system developed as a final academic requirement showcasing technical skills.')">
-            <img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776251755/ANIMIS_zpvm6g.png">
-            <p>Capstone Project</p>
-        </div>
+<div class="card" onclick="openModal('Capstone','Final system project')">
+<img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776251755/ANIMIS_zpvm6g.png">
+<p>Capstone</p>
+</div>
 
-    </div>
+</div>
 </div>
 
 <!-- ACHIEVEMENTS -->
 <div class="section hidden" id="achievements">
-    <h2>🏆 Achievements</h2>
-    <div class="card">
-        <p>✔ Top Student</p>
-        <p>✔ Hackathon Participant</p>
-        <p>✔ Best Project Award</p>
-    </div>
+<h2>🏆 Achievements</h2>
+<div class="card">
+<p>✔ Top Student</p>
+<p>✔ Hackathon Participant</p>
+<p>✔ Best Project Award</p>
+</div>
 </div>
 
 <!-- MODAL -->
 <div id="modal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <div id="modal-body"></div>
-    </div>
+<div class="modal-content">
+<span class="close">&times;</span>
+<div id="modal-body"></div>
+</div>
 </div>
 
 <footer>© 2026 My Portfolio</footer>
 
 <script>
 
-// TYPING (UPGRADED)
+/* DARK MODE */
+function toggleMode(){
+document.body.classList.toggle("light");
+}
+
+/* TYPING */
 const words=["Trecia Anne","a Developer","a Designer"];
-let i=0,j=0,current="",isDeleting=false;
+let i=0,j=0,isDeleting=false;
 
 function type(){
-current=words[i];
-document.querySelector(".typing").innerHTML=current.substring(0,j);
+let word=words[i];
+document.querySelector(".typing").innerHTML=word.substring(0,j);
 
-if(!isDeleting && j<current.length){j++;setTimeout(type,100);}
+if(!isDeleting && j<word.length){j++;setTimeout(type,100);}
 else if(isDeleting && j>0){j--;setTimeout(type,50);}
-else{isDeleting=!isDeleting;if(!isDeleting)i=(i+1)%words.length;setTimeout(type,1000);}
+else{
+isDeleting=!isDeleting;
+if(!isDeleting)i=(i+1)%words.length;
+setTimeout(type,1000);
+}
 }
 type();
 
-// MODAL
+/* MODAL */
 function openModal(title,desc){
 document.getElementById("modal").style.display="block";
 document.getElementById("modal-body").innerHTML=`<h2>${title}</h2><p>${desc}</p>`;
 }
 
-document.querySelector(".close").onclick=()=>document.getElementById("modal").style.display="none";
+document.querySelector(".close").onclick=()=>{
+document.getElementById("modal").style.display="none";
+};
 
 window.onclick=(e)=>{
 if(e.target.className==="modal"){
@@ -284,11 +367,55 @@ document.getElementById("modal").style.display="none";
 }
 };
 
-// SCROLL
+/* SCROLL */
 const obs=new IntersectionObserver(entries=>{
-entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("show");}});
+entries.forEach(e=>{
+if(e.isIntersecting)e.target.classList.add("show");
 });
+});
+
 document.querySelectorAll(".hidden").forEach(el=>obs.observe(el));
+
+/* CURSOR */
+document.addEventListener("mousemove",e=>{
+let c=document.querySelector(".cursor");
+c.style.top=e.clientY+"px";
+c.style.left=e.clientX+"px";
+});
+
+/* PARTICLES */
+const canvas=document.getElementById("particles");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+
+for(let i=0;i<80;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:2
+});
+}
+
+function draw(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+particles.forEach(p=>{
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+ctx.fillStyle="#60a5fa";
+ctx.fill();
+
+p.y+=0.5;
+if(p.y>canvas.height)p.y=0;
+});
+
+requestAnimationFrame(draw);
+}
+draw();
 
 </script>
 
