@@ -8,362 +8,275 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
+* {margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 
-/* BODY + THEMES */
-body{
-background:linear-gradient(135deg,#020617,#1e3a8a);
-color:white;
-overflow-x:hidden;
-transition:0.3s;
-}
-
-body.light{
-background:#f1f5f9;
-color:#111;
-}
-
-/* PARTICLES */
-#particles{
-position:fixed;
-width:100%;
-height:100%;
-z-index:-2;
-}
-
-/* CURSOR */
-.cursor{
-position:fixed;
-width:15px;
-height:15px;
-background:#60a5fa;
-border-radius:50%;
-pointer-events:none;
-filter:blur(8px);
-z-index:999;
+body {
+    background: linear-gradient(135deg, #020617, #1e3a8a);
+    color: white;
+    overflow-x: hidden;
 }
 
 /* NAV */
-nav{
-display:flex;
-justify-content:space-between;
-padding:20px 60px;
-position:sticky;
-top:0;
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(15px);
-z-index:10;
+nav {
+    display:flex;
+    justify-content:space-between;
+    padding:20px 60px;
+    position:sticky;
+    top:0;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(15px);
 }
 
-nav a{
-color:inherit;
-margin-left:20px;
-text-decoration:none;
-}
-
-nav a:hover{
-color:#60a5fa;
-}
+nav a {color:white;margin-left:20px;text-decoration:none;}
+nav a:hover {color:#60a5fa;}
 
 /* HERO */
-.hero{
-display:flex;
-align-items:center;
-justify-content:center;
-gap:50px;
-flex-wrap:wrap;
-padding:120px 20px;
+.hero {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:50px;
+    flex-wrap:wrap;
+    padding:120px 20px;
 }
 
-.hero h1{
-font-size:50px;
-}
-
-.typing{
-color:#60a5fa;
-}
+.hero h1 {font-size:50px;}
+.typing {color:#60a5fa;}
 
 /* PROFILE */
-.profile{
-width:250px;
-height:250px;
-border-radius:50%;
-object-fit:cover;
-border:4px solid #60a5fa;
-box-shadow:0 0 40px #60a5fa;
-animation:float 3s infinite;
-}
-
-@keyframes float{
-50%{transform:translateY(-15px);}
+.profile {
+    width:250px;
+    height:250px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid rgba(96,165,250,0.6);
+    box-shadow:0 0 40px rgba(96,165,250,0.5);
 }
 
 /* BUTTON */
-.btn{
-margin-top:15px;
-padding:10px 25px;
-border:none;
-border-radius:25px;
-background:#3b82f6;
-color:white;
-cursor:pointer;
+.btn {
+    margin-top:15px;
+    padding:10px 25px;
+    border:none;
+    border-radius:25px;
+    background:linear-gradient(90deg,#3b82f6,#60a5fa);
+    color:white;
+    cursor:pointer;
 }
 
 /* SECTIONS */
-.section{
-padding:80px 60px;
+.section {padding:80px 60px;}
+
+.card {
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(20px);
+    border-radius:20px;
+    padding:20px;
+    margin:10px;
+    transition:0.4s;
 }
 
-.flex{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
+.card:hover {
+    transform:translateY(-10px);
+    box-shadow:0 0 25px rgba(96,165,250,0.4);
 }
 
-/* CARD (IMPROVED DESIGN) */
-.card{
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(20px);
-border-radius:20px;
-padding:20px;
-margin:10px;
-transition:0.4s;
-transform-style:preserve-3d;
+.flex {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
 }
 
-.card:hover{
-transform:rotateY(10deg) scale(1.05);
-box-shadow:0 0 30px #60a5fa;
-}
-
-/* IMAGE */
-img{
-width:150px;
-height:150px;
-object-fit:cover;
-border-radius:15px;
+/* IMAGE FIX */
+img {
+    width:150px;
+    height:150px;
+    object-fit:cover;
+    border-radius:15px;
 }
 
 /* VIDEO */
-video{
-width:300px;
-border-radius:15px;
-}
+video {width:300px;border-radius:15px;}
 
 /* MODAL */
-.modal{
-display:none;
-position:fixed;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.7);
-z-index:20;
+.modal {
+    display:none;
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
 }
 
-.modal-content{
-background:#1e293b;
-margin:10% auto;
-padding:30px;
-width:80%;
-max-width:500px;
-border-radius:20px;
+.modal-content {
+    background:rgba(255,255,255,0.08);
+    margin:10% auto;
+    padding:30px;
+    width:80%;
+    max-width:500px;
+    border-radius:20px;
 }
 
-.close{
-float:right;
-cursor:pointer;
-font-size:25px;
+.close {
+    float:right;
+    font-size:25px;
+    cursor:pointer;
 }
 
-/* SCROLL ANIMATION */
-.hidden{
-opacity:0;
-transform:translateY(40px);
-transition:1s;
-}
+/* SCROLL */
+.hidden {opacity:0;transform:translateY(40px);transition:1s;}
+.show {opacity:1;transform:translateY(0);}
 
-.show{
-opacity:1;
-transform:translateY(0);
-}
-
-/* FOOTER */
-footer{
-text-align:center;
-padding:20px;
-opacity:0.7;
-}
+footer {text-align:center;padding:20px;opacity:0.6;}
 </style>
 </head>
 
 <body>
 
-<!-- PARTICLES -->
-<canvas id="particles"></canvas>
-<div class="cursor"></div>
-
 <!-- NAV -->
 <nav>
-<h2>MyPortfolio</h2>
-<div>
-<a href="#about">About</a>
-<a href="#education">Education</a>
-<a href="#hobbies">Hobbies</a>
-<a href="#projects">Projects</a>
-<a href="#achievements">Achievements</a>
-
-<button class="btn" onclick="toggleMode()">🌙</button>
-</div>
+    <h2>MyPortfolio</h2>
+    <div>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#hobbies">Hobbies</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+    </div>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
-<div>
-<h1>Hello, I'm <span class="typing"></span></h1>
-<p>Information Technology | Student</p>
+    <div>
+        <h1>Hello, I'm <span class="typing"></span></h1>
+        <p>Information Technology | Student</p>
+        <button class="btn" onclick="openModal('About Me','I am an IT student passionate about creating modern systems and designs.')">
+            Get to know more about me
+        </button>
+    </div>
 
-<button class="btn"
-onclick="openModal('About Me','I am an IT student passionate about creating modern systems and designs.')">
-Get to know more about me
-</button>
-</div>
-
-<img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776249649/Untitled_design_hscfay.png"
-class="profile">
+    <img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776249649/Untitled_design_hscfay.png" class="profile">
 </div>
 
 <!-- ABOUT -->
 <div class="section hidden" id="about">
-<h2>👤 Personal Info</h2>
+    <h2>👤 Personal Info</h2>
+    <div class="card">
+        <p><b>Name:</b> Trecia Anne Gandia</p>
+        <p><b>Age:</b> 21</p>
+        <p><b>Location:</b> Oriental Mindoro, Philippines</p>
 
-<div class="card">
-<p><b>Name:</b> Trecia Anne Gandia</p>
-<p><b>Age:</b> 21</p>
-<p><b>Location:</b> Oriental Mindoro, Philippines</p>
-</div>
+        <button class="btn" onclick="openModal('Siblings','These are my siblings shown in my portfolio.')">
+            View Siblings
+        </button>
+
+        <div class="flex">
+            <!-- SAME CONTENT (di tinanggal) -->
+            <div class="card"><img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776250151/486598590_2466197697060885_6638689244834438460_n_p0elib.jpg"><p>Austine Rio M. Gandia</p></div>
+            <div class="card"><img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776250217/IMG_20241207_090722_385_bq7ucs.jpg"><p>Joanna Marie M. Gandia</p></div>
+            <div class="card"><img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776250539/photo_2026-04-15_18-55-07_boi9ou.jpg"><p>Trecia Mae M. Gandia</p></div>
+            <div class="card"><img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776249645/photo_2026-04-15_17-41-37_czswuk.jpg"><p>Jan Aizelle M. Gandia</p></div>
+            <div class="card"><img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776249645/photo_2026-04-15_17-41-39_o5k88l.jpg"><p>Janella Rose M. Gandia</p></div>
+        </div>
+    </div>
 </div>
 
 <!-- EDUCATION -->
 <div class="section hidden" id="education">
-<h2>🎓 Education</h2>
+    <h2>🎓 Education</h2>
 
-<div class="card">
-<p><b>Primary School</b></p>
-<p>Antonino Elementary School (2011–2017)</p>
-</div>
+    <div class="card">
+        <p><b>Primary School</b></p>
+        <p>Antonino Elementary School</p>
+        <p>2011-2017</p>
+    </div>
 
-<div class="card">
-<p><b>Secondary School</b></p>
-<p>Macatoc National High School</p>
-<p>HUMSS (2017–2023)</p>
-</div>
+    <div class="card">
+        <p><b>Secondary School</b></p>
+        <p>Macatoc National High School</p>
+        <p>HUMSS</p>
+        <p>2017-2023</p>
+    </div>
 </div>
 
 <!-- HOBBIES -->
 <div class="section hidden" id="hobbies">
-<h2>🎮 Hobbies</h2>
-
-<div class="flex">
-<div class="card">
-<video controls>
-<source src="https://www.w3schools.com/html/mov_bbb.mp4">
-</video>
-<p>Gaming / Editing / Coding</p>
-</div>
-</div>
+    <h2>🎮 Hobbies</h2>
+    <div class="flex">
+        <div class="card">
+            <video controls>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4">
+            </video>
+            <p>Gaming / Editing / Coding</p>
+        </div>
+    </div>
 </div>
 
 <!-- PROJECTS -->
 <div class="section hidden" id="projects">
-<h2>💻 Projects</h2>
+    <h2>💻 Projects</h2>
+    <div class="flex">
 
-<div class="flex">
+        <div class="card" onclick="openModal('Technopreneurship Project','A business-oriented system designed to promote digital services efficiently.')">
+            <img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776251748/sewsera_h25ibl.png">
+            <p>Technopreneurship Project</p>
+        </div>
 
-<div class="card"
-onclick="openModal('Technopreneurship','Business system project')">
-<img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776251748/sewsera_h25ibl.png">
-<p>Technopreneurship</p>
-</div>
+        <div class="card" onclick="openModal('Startup Project','An innovative startup idea aimed at solving real-world problems.')">
+            <img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776251795/DAYO_123_rs6adt.png">
+            <p>Startup Project</p>
+        </div>
 
-<div class="card"
-onclick="openModal('Startup','Startup system')">
-<img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776251795/DAYO_123_rs6adt.png">
-<p>Startup</p>
-</div>
+        <div class="card" onclick="openModal('Capstone Project','A complete system developed as a final academic requirement showcasing technical skills.')">
+            <img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776251755/ANIMIS_zpvm6g.png">
+            <p>Capstone Project</p>
+        </div>
 
-<div class="card"
-onclick="openModal('Capstone','Final academic system project')">
-<img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776251755/ANIMIS_zpvm6g.png">
-<p>Capstone</p>
-</div>
-
-</div>
+    </div>
 </div>
 
 <!-- ACHIEVEMENTS -->
 <div class="section hidden" id="achievements">
-<h2>🏆 Achievements</h2>
-
-<div class="card">
-<p>✔ Top Student</p>
-<p>✔ Hackathon Participant</p>
-<p>✔ Best Project Award</p>
-</div>
+    <h2>🏆 Achievements</h2>
+    <div class="card">
+        <p>✔ Top Student</p>
+        <p>✔ Hackathon Participant</p>
+        <p>✔ Best Project Award</p>
+    </div>
 </div>
 
 <!-- MODAL -->
 <div id="modal" class="modal">
-<div class="modal-content">
-<span class="close">&times;</span>
-<div id="modal-body"></div>
-</div>
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="modal-body"></div>
+    </div>
 </div>
 
 <footer>© 2026 My Portfolio</footer>
 
 <script>
 
-/* LIGHT MODE */
-function toggleMode(){
-document.body.classList.toggle("light");
-}
-
-/* TYPING */
+// TYPING (UPGRADED)
 const words=["Trecia Anne","a Developer","a Designer"];
-let i=0,j=0,isDeleting=false;
+let i=0,j=0,current="",isDeleting=false;
 
 function type(){
-let word=words[i];
-document.querySelector(".typing").innerHTML=word.substring(0,j);
+current=words[i];
+document.querySelector(".typing").innerHTML=current.substring(0,j);
 
-if(!isDeleting && j<word.length){
-j++;
-setTimeout(type,100);
-}else if(isDeleting && j>0){
-j--;
-setTimeout(type,50);
-}else{
-isDeleting=!isDeleting;
-if(!isDeleting) i=(i+1)%words.length;
-setTimeout(type,1000);
-}
+if(!isDeleting && j<current.length){j++;setTimeout(type,100);}
+else if(isDeleting && j>0){j--;setTimeout(type,50);}
+else{isDeleting=!isDeleting;if(!isDeleting)i=(i+1)%words.length;setTimeout(type,1000);}
 }
 type();
 
-/* MODAL */
+// MODAL
 function openModal(title,desc){
 document.getElementById("modal").style.display="block";
 document.getElementById("modal-body").innerHTML=`<h2>${title}</h2><p>${desc}</p>`;
 }
 
-document.querySelector(".close").onclick=()=>{
-document.getElementById("modal").style.display="none";
-};
+document.querySelector(".close").onclick=()=>document.getElementById("modal").style.display="none";
 
 window.onclick=(e)=>{
 if(e.target.className==="modal"){
@@ -371,57 +284,11 @@ document.getElementById("modal").style.display="none";
 }
 };
 
-/* SCROLL ANIMATION */
+// SCROLL
 const obs=new IntersectionObserver(entries=>{
-entries.forEach(e=>{
-if(e.isIntersecting){
-e.target.classList.add("show");
-}
+entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("show");}});
 });
-});
-
 document.querySelectorAll(".hidden").forEach(el=>obs.observe(el));
-
-/* CURSOR */
-document.addEventListener("mousemove",e=>{
-let c=document.querySelector(".cursor");
-c.style.top=e.clientY+"px";
-c.style.left=e.clientX+"px";
-});
-
-/* PARTICLES */
-const canvas=document.getElementById("particles");
-const ctx=canvas.getContext("2d");
-
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
-
-let particles=[];
-
-for(let i=0;i<80;i++){
-particles.push({
-x:Math.random()*canvas.width,
-y:Math.random()*canvas.height,
-r:2
-});
-}
-
-function draw(){
-ctx.clearRect(0,0,canvas.width,canvas.height);
-
-particles.forEach(p=>{
-ctx.beginPath();
-ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-ctx.fillStyle="#60a5fa";
-ctx.fill();
-
-p.y+=0.5;
-if(p.y>canvas.height)p.y=0;
-});
-
-requestAnimationFrame(draw);
-}
-draw();
 
 </script>
 
