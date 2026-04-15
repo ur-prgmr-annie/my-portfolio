@@ -5,16 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ur_prgmr_annie</title>
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+* {margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 
 body {
     background: linear-gradient(135deg, #020617, #1e3a8a);
@@ -22,222 +16,188 @@ body {
     overflow-x: hidden;
 }
 
-/* NAVBAR */
+/* NAV */
 nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 60px;
-    position: sticky;
-    top: 0;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(15px);
-    z-index: 1000;
+    display:flex;
+    justify-content:space-between;
+    padding:20px 60px;
+    position:sticky;
+    top:0;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(15px);
 }
 
 nav a {
-    color: white;
-    margin-left: 20px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: #60a5fa;
+    color:white;
+    margin-left:20px;
+    text-decoration:none;
 }
 
 /* HERO */
 .hero {
-    text-align: center;
-    padding: 120px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:50px;
+    flex-wrap:wrap;
+    padding:120px 20px;
 }
 
-.hero h1 {
-    font-size: 55px;
+.hero h1 {font-size:50px;}
+
+.typing {color:#60a5fa;}
+
+/* PROFILE */
+.profile {
+    width:250px;
+    height:250px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid rgba(96,165,250,0.6);
+    box-shadow:0 0 40px rgba(96,165,250,0.6);
+    animation:float 3s ease-in-out infinite;
 }
 
-.typing {
-    color: #60a5fa;
+@keyframes float {
+    0%,100% {transform:translateY(0);}
+    50% {transform:translateY(-15px);}
 }
 
 /* BUTTON */
 .btn {
-    margin-top: 20px;
-    padding: 12px 30px;
-    border-radius: 30px;
-    border: none;
-    background: linear-gradient(90deg, #3b82f6, #60a5fa);
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    transform: scale(1.05);
+    margin-top:15px;
+    padding:12px 25px;
+    border:none;
+    border-radius:25px;
+    background:linear-gradient(90deg,#3b82f6,#60a5fa);
+    color:white;
+    cursor:pointer;
 }
 
 /* SECTIONS */
-.section {
-    padding: 80px 60px;
-}
+.section {padding:80px 60px;}
 
-/* GLASS CARD */
 .card {
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(20px);
-    border-radius: 20px;
-    padding: 20px;
-    margin: 15px;
-    transition: 0.4s;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(20px);
+    border-radius:20px;
+    padding:20px;
+    margin:10px;
+    transition:0.4s;
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 25px rgba(96,165,250,0.4);
+    transform:translateY(-10px);
+    box-shadow:0 0 25px rgba(96,165,250,0.4);
 }
 
-/* FLEX */
 .flex {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
 }
 
-/* IMAGE */
-img {
-    width: 150px;
-    border-radius: 15px;
+/* PROJECT */
+.project-img {
+    width:150px;
+    height:150px;
+    object-fit:cover;
+    border-radius:15px;
 }
 
-/* VIDEO */
-video {
-    width: 300px;
-    border-radius: 15px;
+/* MODAL */
+.modal {
+    display:none;
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
 }
 
-/* REVEAL ANIMATION */
-.hidden {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 1s;
+.modal-content {
+    background:rgba(255,255,255,0.08);
+    margin:10% auto;
+    padding:30px;
+    width:80%;
+    max-width:500px;
+    border-radius:20px;
 }
 
-.show {
-    opacity: 1;
-    transform: translateY(0);
+.close {
+    float:right;
+    font-size:25px;
+    cursor:pointer;
+}
+
+/* SKILLS */
+.skill {
+    margin:10px 0;
+}
+
+.bar {
+    background:#1e293b;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.bar div {
+    height:10px;
+    background:#60a5fa;
+}
+
+/* SCROLL ANIMATION */
+.hidden {opacity:0;transform:translateY(40px);transition:1s;}
+.show {opacity:1;transform:translateY(0);}
+
+/* CURSOR GLOW */
+.cursor {
+    position:fixed;
+    width:20px;
+    height:20px;
+    background:#60a5fa;
+    border-radius:50%;
+    pointer-events:none;
+    filter:blur(10px);
 }
 
 /* FOOTER */
-footer {
-    text-align: center;
-    padding: 30px;
-    opacity: 0.6;
-}
-.profile {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid rgba(96,165,250,0.6);
-    box-shadow: 0 0 40px rgba(96,165,250,0.5);
-    transition: 0.4s;
-}
-
-.profile:hover {
-    transform: scale(1.05);
-}
-
+footer {text-align:center;padding:20px;opacity:0.5;}
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
+<div class="cursor"></div>
+
 <nav>
     <h2>MyPortfolio</h2>
     <div>
         <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#hobbies">Hobbies</a>
         <a href="#projects">Projects</a>
-        <a href="#achievements">Achievements</a>
+        <a href="#skills">Skills</a>
     </div>
 </nav>
 
-<div class="hero" style="display:flex; align-items:center; justify-content:center; gap:50px; flex-wrap:wrap;">
-
-    <!-- TEXT -->
+<!-- HERO -->
+<div class="hero">
     <div>
         <h1>Hello, I'm <span class="typing"></span></h1>
-        <p>Information Technology | Student</p>
-        <button class="btn">Get to know more about me</button>
+        <p>IT Student | Developer | Designer</p>
+        <button class="btn" onclick="openModal('About Me','I am a passionate IT student who loves creating modern websites.')">
+            About Me
+        </button>
     </div>
 
-    <!-- PROFILE IMAGE -->
-    <div>
-<img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776249649/Untitled_design_hscfay.png" class="profile">    </div>
-
+    <img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776249649/Untitled_design_hscfay.png" class="profile">
 </div>
 
 <!-- ABOUT -->
 <div class="section hidden" id="about">
     <h2>👤 Personal Info</h2>
     <div class="card">
-        <p><b>Name:</b> Trecia Anne Gandia</p>
-        <p><b>Age:</b> 21</p>
-        <p><b>Location:</b> Oriental Mindoro,Philippines</p>
-
-        <h3>Siblings</h3>
-        <div class="flex">
-            <div class="card">
-                <img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776250151/486598590_2466197697060885_6638689244834438460_n_p0elib.jpg">
-                <p>Austine Rio M. Gandia</p>
-            </div>
-            <div class="card">
-                <img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776250217/IMG_20241207_090722_385_bq7ucs.jpg">
-                <p>Joanna Marie M. Gandia</p>
-            </div>
-            <div class="card">
-                <img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776250539/photo_2026-04-15_18-55-07_boi9ou.jpg">
-                <p>Trecia Mae M. Gandia</p>
-            </div>
-            <div class="card">
-                <img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776249645/photo_2026-04-15_17-41-37_czswuk.jpg">
-                <p>Jan Aizelle M. Gandia</p>
-            </div>
-            <div class="card">
-                <img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776249645/photo_2026-04-15_17-41-39_o5k88l.jpg">
-                <p>Janella Rose M. Gandia</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- EDUCATION -->
-<div class="section hidden" id="education">
-    <h2>🎓 Education</h2>
-    <div class="card">
-         <p>Primary School</p>
-        <p>School Name: Antonino Elemnetary School</p>
-        <p>2011-2017</p>
-    </div>
-    <div class="card">
-         <p>Secondary School</p>
-        <p>School Name: Macatoc National High School</p>
-        <p>Course / Strand: Humanitities and Social Sciences</p>
-        <p>2017-2023</p>
-    </div>
-</div>
-
-<!-- HOBBIES -->
-<div class="section hidden" id="hobbies">
-    <h2>🎮 Hobbies</h2>
-    <div class="flex">
-        <div class="card">
-            <video controls>
-                <source src="https://www.w3schools.com/html/mov_bbb.mp4">
-            </video>
-            <p>Gaming / Editing / Coding</p>
-        </div>
+        <p>Name: Trecia Anne Gandia</p>
+        <p>Age: 21</p>
+        <p>Location: Philippines</p>
     </div>
 </div>
 
@@ -245,62 +205,106 @@ footer {
 <div class="section hidden" id="projects">
     <h2>💻 Projects</h2>
     <div class="flex">
-        <div class="card">
-            <img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776251748/sewsera_h25ibl.png">
-            <p>Technopreneurship Project</p>
+
+        <div class="card" onclick="openModal('Technopreneurship','Business system project')">
+            <img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776251748/sewsera_h25ibl.png" class="project-img">
+            <p>Technopreneurship</p>
         </div>
-        <div class="card">
-            <img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776251795/DAYO_123_rs6adt.png">
-            <p>StartUp Project</p>
+
+        <div class="card" onclick="openModal('Startup','Innovative startup system')">
+            <img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776251795/DAYO_123_rs6adt.png" class="project-img">
+            <p>Startup</p>
         </div>
-         <div class="card">
-            <img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776251755/ANIMIS_zpvm6g.png">
-            <p>Capstone Project</p>
-        </div>
+
     </div>
 </div>
 
-<!-- ACHIEVEMENTS -->
-<div class="section hidden" id="achievements">
-    <h2>🏆 Achievements</h2>
-    <div class="card">
-        <p>✔ Top Student</p>
-        <p>✔ Hackathon Participant</p>
-        <p>✔ Best Project Award</p>
+<!-- SKILLS -->
+<div class="section hidden" id="skills">
+    <h2>📊 Skills</h2>
+
+    <div class="skill">
+        HTML
+        <div class="bar"><div style="width:90%"></div></div>
+    </div>
+
+    <div class="skill">
+        CSS
+        <div class="bar"><div style="width:85%"></div></div>
+    </div>
+
+    <div class="skill">
+        JavaScript
+        <div class="bar"><div style="width:75%"></div></div>
+    </div>
+
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="modal-body"></div>
     </div>
 </div>
 
-<footer>
-    © 2026 My Portfolio
-</footer>
+<footer>© 2026 My Portfolio</footer>
 
-<!-- JS -->
 <script>
 
-// TYPING EFFECT
-const text = "Trecia Anne";
-let i = 0;
+// TYPING MULTI TEXT
+const words = ["Trecia Anne", "a Developer", "a Designer"];
+let i=0,j=0,current="",isDeleting=false;
 
-function typing() {
-    if (i < text.length) {
-        document.querySelector(".typing").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typing, 100);
+function type(){
+    current = words[i];
+    document.querySelector(".typing").innerHTML =
+        current.substring(0,j);
+
+    if(!isDeleting && j<current.length){
+        j++;
+        setTimeout(type,100);
+    } else if(isDeleting && j>0){
+        j--;
+        setTimeout(type,50);
+    } else {
+        isDeleting=!isDeleting;
+        if(!isDeleting) i=(i+1)%words.length;
+        setTimeout(type,1000);
     }
 }
-typing();
+type();
 
-// SCROLL ANIMATION
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-        }
-    });
+// MODAL
+function openModal(title,desc){
+    document.getElementById("modal").style.display="block";
+    document.getElementById("modal-body").innerHTML=`<h2>${title}</h2><p>${desc}</p>`;
+}
+
+document.querySelector(".close").onclick=()=>{
+    document.getElementById("modal").style.display="none";
+};
+
+window.onclick=(e)=>{
+    if(e.target.className==="modal"){
+        document.getElementById("modal").style.display="none";
+    }
+};
+
+// SCROLL
+const obs=new IntersectionObserver(entries=>{
+entries.forEach(e=>{
+if(e.isIntersecting){e.target.classList.add("show");}
 });
+});
+document.querySelectorAll(".hidden").forEach(el=>obs.observe(el));
 
-document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
-
+// CURSOR
+document.addEventListener("mousemove",e=>{
+    const cursor=document.querySelector(".cursor");
+    cursor.style.top=e.clientY+"px";
+    cursor.style.left=e.clientX+"px";
+});
 </script>
 
 </body>
