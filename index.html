@@ -1,3 +1,5 @@
+Here is an HTML document that updates the "About Me" modal content with your new personalized introduction, while preserving all the portfolio's interactive features.
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -495,7 +497,7 @@ footer {
         </div>
         
         <div class="sibling-grid" id="siblingsGrid">
-            <!-- sibling data will be populated here but also hardcoded for clarity -->
+            <!-- sibling data will be populated here -->
         </div>
     </section>
 
@@ -505,7 +507,7 @@ footer {
         <div class="grid">
             <div class="card"><i class="fas fa-school"></i> <strong>Antonino Elementary School</strong><br>2011 - 2017</div>
             <div class="card"><i class="fas fa-graduation-cap"></i> <strong>Macatoc National High School</strong><br>HUMSS Strand</div>
-            <div class="card"><i class="fas fa-university"></i> <strong>Bachelor of Science in Information Technology</strong><br></div>
+            <div class="card"><i class="fas fa-university"></i> <strong>Bachelor of Science in Information Technology</strong><br>Mindoro State University</div>
         </div>
     </section>
 
@@ -549,7 +551,7 @@ footer {
             <div class="card project-card card-clickable" data-title="Capstone: Animis" data-desc="Final year capstone project – a mental wellness platform integrated with AI-based journaling and community support." data-img="https://res.cloudinary.com/doxofddj5/image/upload/v1776251755/ANIMIS_zpvm6g.png">
                 <img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776251755/ANIMIS_zpvm6g.png" alt="Capstone">
                 <p><strong>Capstone: Animis</strong></p>
-                <small>Innovation award nominee</small>
+            
             </div>
         </div>
     </section>
@@ -561,7 +563,6 @@ footer {
             <ul class="achievement-list">
                 <li><i class="fas fa-trophy"></i>Consistent Dean's Lister</li>
                 <li><i class="fas fa-code"></i> Best Presenter Research Presentation</li>
-               
             </ul>
         </div>
     </section>
@@ -660,11 +661,10 @@ footer {
         if (e.target === modal) closeModal();
     });
     
-    // ----- About modal trigger -----
+    // ----- UPDATED ABOUT MODAL (New personalized message matching request) -----
     document.getElementById('openAboutModalBtn').addEventListener('click', () => {
-        openModal('A Little About Me', 
-            'I am an IT student who thrives on building creative and functional digital experiences. I love blending design with logic to solve real-world problems. Currently exploring full-stack development and AI integrations.'
-        );
+        const updatedBio = `Hi! I am Trecia Anne M. Gandia, a Bachelor of Science in Information Technology student at Mindoro State University. I thrive on building creative and functional digital experiences. Currently, in my third year, I am still solving technological problems with passion and curiosity.`;
+        openModal('✨ A Little About Me ✨', updatedBio);
     });
     
     // ----- Siblings Modal with Images Grid (Detailed) -----
@@ -830,3 +830,4 @@ footer {
 </script>
 </body>
 </html>
+```
