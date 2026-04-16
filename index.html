@@ -500,13 +500,19 @@ footer {
         </div>
     </section>
 
-    <!-- Education -->
+    <!-- Education Journey (BSIT III F1 included) -->
     <section id="education" class="section reveal">
         <h2 class="section-title">Education Journey</h2>
         <div class="grid">
             <div class="card"><i class="fas fa-school"></i> <strong>Antonino Elementary School</strong><br>2011 - 2017</div>
             <div class="card"><i class="fas fa-graduation-cap"></i> <strong>Macatoc National High School</strong><br>HUMSS Strand</div>
             <div class="card"><i class="fas fa-university"></i> <strong>Bachelor of Science in Information Technology</strong><br>Mindoro State University</div>
+            <!-- NEW CARD: BSIT III F1 Section -->
+            <div class="card"><i class="fas fa-id-card"></i> <strong>BSIT III - F1</strong><br>Current Year & Section | Major in Web & Application Development</div>
+        </div>
+        <!-- Additional description to highlight current standing -->
+        <div class="card" style="margin-top: 1.5rem; background: var(--card-bg);">
+            <p><i class="fas fa-chalkboard-user" style="color: var(--primary); margin-right: 0.5rem;"></i> <strong>Current Academic Status:</strong> Third Year, First Semester • Pursuing advanced coursework in full-stack development, database management, and AI fundamentals.</p>
         </div>
     </section>
 
@@ -550,7 +556,7 @@ footer {
             <div class="card project-card card-clickable" data-title="Capstone: Animis" data-desc="Final year capstone project – a mental wellness platform integrated with AI-based journaling and community support." data-img="https://res.cloudinary.com/doxofddj5/image/upload/v1776251755/ANIMIS_zpvm6g.png">
                 <img src="https://res.cloudinary.com/doxofddj5/image/upload/v1776251755/ANIMIS_zpvm6g.png" alt="Capstone">
                 <p><strong>Capstone: Animis</strong></p>
-            
+                <small>Innovation award nominee</small>
             </div>
         </div>
     </section>
@@ -568,7 +574,7 @@ footer {
 </main>
 
 <footer>
-    <p>© 2026 Trecia Anne Gandia Personal Portfolio</p>
+    <p>© 2026 Trecia Anne Gandia Personal Portfolio | BSIT III F1 • Mindoro State University</p>
 </footer>
 
 <!-- Modal Structure -->
@@ -662,7 +668,7 @@ footer {
     
     // ----- UPDATED ABOUT MODAL (New personalized message matching request) -----
     document.getElementById('openAboutModalBtn').addEventListener('click', () => {
-        const updatedBio = `Hi! I am Trecia Anne M. Gandia, a Bachelor of Science in Information Technology student at Mindoro State University. I thrive on building creative and functional digital experiences. Currently, in my third year, I am still solving technological problems with passion and curiosity.`;
+        const updatedBio = `Hi! I am Trecia Anne M. Gandia, a Bachelor of Science in Information Technology student at Mindoro State University. I thrive on building creative and functional digital experiences. Currently, in my third year, I am still solving technological problems with passion and curiosity. (BSIT III - Section F1)`;
         openModal('A Little About Me', updatedBio);
     });
     
@@ -829,4 +835,3 @@ footer {
 </script>
 </body>
 </html>
-```
